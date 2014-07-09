@@ -1,0 +1,5 @@
+<?
+	
+	require('jfu.php');
+	 	
+?>

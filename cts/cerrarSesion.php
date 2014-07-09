@@ -1,0 +1,5 @@
+<? 
+	
+	require('../funciones.php');
+	cerrarSesion();
+?>

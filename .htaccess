@@ -1,0 +1,5 @@
+Options All -Indexes
+
+ErrorDocument 403 /kvc/e/forbidden.php
+ErrorDocument 404 /kvc/e/notFound.php
+ErrorDocument 500 /kvc/e/serverError.php
