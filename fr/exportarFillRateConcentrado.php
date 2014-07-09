@@ -41,30 +41,13 @@ $encabezados = array(
 	"Cadena",
 	"Consolidado",
 	"Material Group 5",
-	"Material Group 5 Description",
-	"% Ejecutivo OM",
-	"% Ejecutivo Transporte",
-	"% Coordinador Operaciones",
-	"% Call Center",
-	"% Coordinador Transporte",
-	"% Ejecutivo CPFR",
-	"% Ejecutivo Reposicion",
-	"% Demand Planning",
-	"% Lider Calidad",
-	"Ejecutivo OM",
-	"Ejecutivo Transporte",
-	"Coordinador Operaciones",
-	"Call Center",
-	"Coordinador Transporte",
-	"Ejecutivo CPFR",
-	"Ejecutivo Reposicion",
-	"Demand Planning",
-	"Lider Calidad"
-
+	"Material Group 5 Description"
 
 );
 
-$query = "SELECT * FROM fr_con WHERE per = '" . $_SESSION['periodo'] . "'";
+$query = "SELECT per, c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20, c21, c22, c23, c24, matGro5, matGro5Des 
+			FROM fr_con 
+			WHERE per = '" . $_SESSION['periodo'] . "'";
 
 $resultado;
 
