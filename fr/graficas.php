@@ -21,7 +21,6 @@
 	<h4>
 		Parametros
 	</h4>
-
 	
 	<center>
 
@@ -51,61 +50,78 @@
 -->
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
 <script>
 
 	$(document).ready(function(){
 
 
-        $('#container').highcharts({
+       $('#container').highcharts({
             chart: {
                 type: 'column'
             },
             title: {
-                text: 'Monthly Average Rainfall'
-            },
-            subtitle: {
-                text: 'Source: WorldClimate.com'
+                text: 'Fill Rate'
             },
             xAxis: {
-                categories: [
-                    'Jan',
-                    'Feb',
-                    'Mar',
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec'
-                ]
+                categories: ['P01', 'P02', 'P03', 'P04', 'P05']
             },
             yAxis: {
                 min: 0,
+                max: 100,
                 title: {
-                    text: 'Rainfall (mm)'
+                    text: 'Porcentaje'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
                 }
             },
+            legend: {
+                align: 'right',
+                x: -70,
+                verticalAlign: 'top',
+                y: 20,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: false
+            },
             tooltip: {
-                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/>'+
+                        this.series.name +': '+ this.y +'<br/>'+
+                        'Total: '+ this.point.stackTotal;
+                }
             },
             plotOptions: {
                 column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                        style: {
+                            textShadow: '0 0 3px black, 0 0 3px black'
+                        }
+                    }
                 }
             },
             series: [{
-                name: 'Tokyo',
-                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-    
+                name: 'PGI',
+                data: [10, 10, 10, 10, 10]
+            }, {
+                name: 'ATP',
+                data: [2, 2, 3, 2, 1]
+            }, {
+                name: 'SD',
+                data: [3, 4, 4, 2, 5]
+            }, {
+                name: 'REJ',
+                data: [20, 20, 20, 20, 20]
             }]
         });
     

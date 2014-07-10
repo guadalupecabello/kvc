@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-07-2014 a las 12:43:37
+-- Tiempo de generación: 10-07-2014 a las 14:35:08
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -790,6 +790,7 @@ CREATE TABLE IF NOT EXISTS `fr_con_agr` (
   `c15` double(20,10) DEFAULT NULL,
   `c16` double(20,10) DEFAULT NULL,
   `c17` double(20,10) DEFAULT NULL,
+  `c12` varchar(200) COLLATE utf8_bin DEFAULT NULL,
   `matGro5` int(6) DEFAULT NULL,
   `matGro5Des` varchar(500) COLLATE utf8_bin DEFAULT NULL,
   `porEjeOm` double(12,10) DEFAULT NULL,
